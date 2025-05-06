@@ -1,5 +1,6 @@
 import 'package:calculator/screens/calculator_screen/calculator_screen_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
-        return const MaterialApp(
+        return const GetMaterialApp(
           title: 'Calculator',
           home: CalculatorScreenView(),
         );

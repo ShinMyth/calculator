@@ -39,6 +39,12 @@ dependencies:
   # A Flutter package that effortlessly makes your apps responsive.
   sizer:
 
+  # GetX is an extra-light and powerful solution for Flutter.
+  get:
+
+  # A library for parsing and evaluating mathematical expressions.
+  math_expressions:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

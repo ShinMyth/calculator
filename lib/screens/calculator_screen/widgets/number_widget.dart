@@ -1,4 +1,6 @@
+import 'package:calculator/screens/calculator_screen/calculator_screen_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class NumberWidget extends StatelessWidget {
@@ -11,8 +13,12 @@ class NumberWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CalculatorScreenController>();
+
     return InkWell(
-      onTap: () {},
+      onTap: () => controller.setNumberInput(
+        value: label,
+      ),
       splashColor: Colors.orange.withOpacity(0.25),
       highlightColor: Colors.orange.withOpacity(0.25),
       customBorder: const CircleBorder(),

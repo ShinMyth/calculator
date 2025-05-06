@@ -1,18 +1,26 @@
+import 'package:calculator/screens/calculator_screen/calculator_screen_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-class OperationWidget extends StatelessWidget {
-  const OperationWidget({
+class OperatorWidget extends StatelessWidget {
+  const OperatorWidget({
     super.key,
+    required this.label,
     required this.icon,
   });
 
+  final String label;
   final IconData icon;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CalculatorScreenController>();
+
     return InkWell(
-      onTap: () {},
+      onTap: () => controller.setOperatorInput(
+        value: label,
+      ),
       splashColor: Colors.orange.withOpacity(0.25),
       highlightColor: Colors.orange.withOpacity(0.25),
       customBorder: const CircleBorder(),
