@@ -27,31 +27,34 @@ class CalculatorScreenView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: 3.w,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      controller.input.value,
-                      style: TextStyle(
-                        color: controller.result.value.isEmpty
-                            ? Colors.black
-                            : Colors.black54,
-                        fontSize:
-                            controller.result.value.isEmpty ? 40.px : 30.px,
-                      ),
-                    ),
-                    if (controller.result.value.isNotEmpty) ...[
+                child: SizedBox(
+                  width: 94.w,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
                       Text(
-                        controller.result.value,
+                        controller.input.value,
                         style: TextStyle(
-                          fontSize: 40.px,
+                          color: controller.result.value.isEmpty
+                              ? Colors.black
+                              : Colors.black54,
+                          fontSize:
+                              controller.result.value.isEmpty ? 40.px : 30.px,
                         ),
-                        textAlign: TextAlign.right,
-                        maxLines: 1,
                       ),
+                      if (controller.result.value.isNotEmpty) ...[
+                        Text(
+                          controller.result.value,
+                          style: TextStyle(
+                            fontSize: 40.px,
+                          ),
+                          textAlign: TextAlign.right,
+                          maxLines: 1,
+                        ),
+                      ],
                     ],
-                  ],
+                  ),
                 ),
               ),
               SizedBox(

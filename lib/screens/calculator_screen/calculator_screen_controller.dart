@@ -39,7 +39,12 @@ class CalculatorScreenController extends GetxController {
   }
 
   void backspace() {
-    if (input.value.isNotEmpty && result.isEmpty) {
+    if (result.value.isNotEmpty) {
+      result.value = "";
+      return;
+    }
+
+    if (input.value.isNotEmpty) {
       input.value = input.value.substring(0, input.value.length - 1);
     }
   }
